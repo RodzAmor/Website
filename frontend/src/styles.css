@@ -1,0 +1,21 @@
+html {
+    background-color: #2e1718 !important;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    background: #2e1718;
+    width: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #e6b04b;
+}
+
+.custom-shadow {
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+.text-important {
+    color: #e6b04b !important;
+}
