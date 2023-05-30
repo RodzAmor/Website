@@ -31,7 +31,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li tabIndex={0}>
-                            <a className='text-white text-lg md:text-2xl font-semibold' href="/projects">Projects</a>
+                            <a className='text-white text-lg md:text-2xl font-semibold' href="#projects">Projects</a>
                         </li>
                         {/* <li tabIndex={0}>
                             <a className='text-white text-lg md:text-2xl font-semibold' href="/blog">Blog</a>

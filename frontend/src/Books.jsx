@@ -30,7 +30,7 @@ const Books = () => {
     return (
         <>
             <Navbar />
-            <div className="container">
+            <div className="container text-center">
                 Books
                 <Book />
                 <p className="text-white text-3xl font-bold">Still a Work in Progress, come back later to see it in completion!</p>

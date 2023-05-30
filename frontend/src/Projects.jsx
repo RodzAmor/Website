@@ -6,7 +6,7 @@ import doghouse from './images/projects/doghouse.png'
 
 const ProjectGrid = () => {
     return (
-        <>
+        <div id='projects'>
             <p className="text-5xl font-bold text-white text-center mb-8">Personal Projects</p>
             <div className="grid lg:grid-cols-3 container rounded-lg mx-auto mb-16">
                 <label className="hover:cursor-pointer bg-secondary ease-in-out transition duration-200 h-56 relative" htmlFor="wip-modal">
@@ -193,7 +193,7 @@ const ProjectGrid = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
