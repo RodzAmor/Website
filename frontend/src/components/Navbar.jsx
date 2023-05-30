@@ -33,15 +33,15 @@ const Navbar = () => {
                         <li tabIndex={0}>
                             <a className='text-white text-lg md:text-2xl font-semibold' href="/projects">Projects</a>
                         </li>
-                        <li tabIndex={0}>
+                        {/* <li tabIndex={0}>
                             <a className='text-white text-lg md:text-2xl font-semibold' href="/blog">Blog</a>
-                        </li>
+                        </li> */}
                         <li tabIndex={0}>
                             <a className='text-white text-lg md:text-2xl font-semibold'>
                                 Personal
                             </a>
                             <ul className="p-2 bg-secondary custom-shadow">
-                                <li className='bg-secondary'><a className="text-lg text-white" href="/stocks">Videos</a></li>
+                                {/* <li className='bg-secondary'><a className="text-lg text-white" href="/videos">Videos</a></li> */}
                                 <li className='bg-secondary'><a className="text-lg text-white" href="/books">Reading<br></br>Journal</a></li>
                                 <li className='bg-secondary'><a className="text-lg text-white" href="/stocks">Stocks</a></li>
                             </ul>

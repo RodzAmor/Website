@@ -33,6 +33,7 @@ const Books = () => {
             <div className="container">
                 Books
                 <Book />
+                <p className="text-white text-3xl font-bold">Still a Work in Progress, come back later to see it in completion!</p>
             </div>
         </>
     )
