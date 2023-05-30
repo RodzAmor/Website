@@ -1,20 +1,19 @@
 {
-    "version": 2,
     "builds": [
       {
-        "src": "api/index.py",
-        "use": "@vercel/python",
+        "src": "Website/wsgi.py",
+        "use": "@ardnt/vercel-python-wsgi",
         "config": {
-          "maxLambdaSize": "50mb"
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.9"
         }
-      },
-      {
-        "src": "/package.json",
-        "use": "@vercel/node"
       }
     ],
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/api/$1" }
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "Website/wsgi.py"
+      }
     ]
 }
   

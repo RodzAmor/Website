@@ -227,7 +227,7 @@ const Main = () => {
                 <p className="text-5xl font-bold text-white text-center mb-6">Education</p>
                 <div className="card w-3/4 md:w-1/2 bg-secondary custom-shadow mx-auto mb-16">
                     <div className="card-body">
-                        <a href="umd.edu" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto'></img></a>
+                        <a href="https://umd.edu/" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto'></img></a>
                         <p className="text-3xl text-white text-center mb-4">University of Maryland, College Park</p>
                         <p className="text-lg font-bold text-important text-center italic mb-2">College Park, MD 20742</p>
                         <p className="text-lg text-white text-center">2022-2025</p>
