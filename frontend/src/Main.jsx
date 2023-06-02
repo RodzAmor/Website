@@ -36,7 +36,7 @@ const Main = () => {
                         <p className="text-3xl text-white text-center mb-4">Nice to meet you, my name is</p>
                         <p className="text-6xl font-bold text-important text-center">Rodz Andrie Amor</p>
                         <p className="text-2xl text-white font-semibold italic text-center">Software Engineer & Quant</p>
-                        <p className="text-lg text-white italic text-center"><span className="text-umd-red">University</span> of <span className="text-black">Maryland</span> - Class of 2025</p>
+                        <p className="text-lg text-white italic text-center"><span className="text-umd-red">University</span> of <span className="text-umd-gold">Maryland</span> - Class of 2025</p>
                     </div>
                 </div>
 
