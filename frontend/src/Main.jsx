@@ -1,7 +1,8 @@
 // import { Menu } from '@headlessui/react'
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
-import Me from "./images/me.png"
+// import Me from "./images/me.png"
+import Me from "./images/me2.jpeg"
 import { DiJava, DiSwift, DiReact } from 'react-icons/di'
 import { SiCsharp, SiTypescript, SiMysql, SiTensorflow, SiKeras } from 'react-icons/si'
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaSnapchat, FaAws } from "react-icons/fa"
@@ -26,7 +27,7 @@ const Main = () => {
                 <div className="flex justify-center mb-16">
                     <div className="avatar">
                         <div className="bg-secondary rounded-full w-56 ring-4 ring-gold mx-auto">
-                            <img className="scale-90" src={Me} alt="portrait" />
+                            <img className="" src={Me} alt="portrait" />
                         </div>
                     </div>
                 </div>
