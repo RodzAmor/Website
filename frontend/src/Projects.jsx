@@ -30,7 +30,7 @@ const ProjectGrid = () => {
                         onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0)'}></div>
                     <div className="text-center relative p-8">
                         <p className="text-important text-3xl font-bold mb-4" style={{textShadow:'0px 0px 20px #000000'}}>Chess Artificial Intelligence</p>
-                        <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>WIP - Come back later to see see the completed project</p>
+                        <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>WIP - Come back later to see the completed project</p>
                     </div>
                 </label>
                 <label className="hover:cursor-pointer bg-secondary ease-in-out transition duration-200 h-56 relative" htmlFor="loop-modal">
@@ -54,7 +54,7 @@ const ProjectGrid = () => {
                         onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0)'}></div>
                     <div className="text-center relative p-8">
                         <p className="text-important text-3xl font-bold mb-4" style={{textShadow:'0px 0px 20px #000000'}}>Congressional Sentiment Analysis</p>
-                        <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>WIP - Come back later to see see the completed project</p>
+                        <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>WIP - Come back later to see the completed project</p>
                     </div>
                 </label>
                 <label className="hover:cursor-pointer bg-secondary ease-in-out transition duration-200 h-56 relative" htmlFor="lecturegpt-modal">
@@ -124,7 +124,7 @@ const ProjectGrid = () => {
             <input type="checkbox" id="wip-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box bg-secondary">
-                    <h3 className="font-bold text-lg text-white">WIP - Come back later to see see the completed project!</h3>
+                    <h3 className="font-bold text-lg text-white">WIP - Come back later to see the completed project!</h3>
                     <div className="modal-action">
                         <label htmlFor="wip-modal" className="btn btn-primary border-none hover:none text-important">Okay</label>
                     </div>

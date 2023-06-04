@@ -154,11 +154,13 @@ const Main = () => {
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                         icon={<img className="rounded-full" src={STAMP}></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://stamp.umd.edu/stamp.umd.edu" target="_blank" className="hover:opacity-80">Department of Student Affairs</a>
+                            <a href="https://stamp.umd.edu/" target="_blank" className="hover:opacity-80">Department of Student Affairs</a>
                         </h3>    
+                        <h2 className="text-important italic">Student Software Developer</h2>
                         <p>Developed and implemented innovative web solutions to improve user experience, utilizing the Drupal content management system and MySQL database. Constructed schemas and designed object-relational mappings.</p>
                         <p>Worked with users to create modern and dynamic webpages using C# and ASP.NET web forms.</p>
                         <p>Designed and built Web APIs using the ASP.NET Core framework to fulfill client requests.</p>
+                        <p className="text-important text-center"><a href="https://drive.google.com/file/d/1uRoBnvxut7_RBhy7ScZ2oPD3VDwJ12ZU/view?usp=sharing" className="hover:underline" target="_blank">Award</a></p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
@@ -169,6 +171,7 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://reslife.umd.edu/" target="_blank" className="hover:opacity-80">Department of Resident Life</a>
                         </h3>
+                        <h2 className="text-important italic">Community Assistant</h2>
                         <p>Served as the primary point of contact for residents at UMD Ellicott Hall, handling inquiries and resolving issues.</p>
                         <p>Responsible for checking residents in, issuing keys and swipes, and performing key and package audits.</p>
                     </VerticalTimelineElement>
@@ -181,6 +184,7 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://www.pandaexpress.com/" target="_blank" className="hover:opacity-80">Panda Express</a>
                         </h3>
+                        <h2 className="text-important italic">Kitchen Assistant</h2>
                         <p>Provided high-quality customer service during high-volume, fast-paced operations.</p>
                         <p>Trained new employees and taught them techniques to improve efficiency.</p>
                     </VerticalTimelineElement>
@@ -193,6 +197,7 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://www.cvshealth.com/" target="_blank" className="hover:opacity-80">CVS Pharmacy</a>
                         </h3>
+                        <h2 className="text-important italic">Sales Associate</h2>
                         <p>Handled important store operations including store invoices, working the register, and stocking shelves.</p>
                         <p>Boosted sales by presenting and selling the Carepass service to over 30 clients.</p>
                     </VerticalTimelineElement>
@@ -205,6 +210,7 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://www.codeninjas.com/" target="_blank" className="hover:opacity-80">Code Ninjas</a>
                         </h3>
+                        <h2 className="text-important italic">Programming Mentor</h2>
                         <p>Mentored software development with programming languages in JavaScript, Lua, and Python.</p>
                         <p>Directed and led summer courses on Lua game development and Python programming. </p>
                     </VerticalTimelineElement>
@@ -234,7 +240,7 @@ const Main = () => {
                         <p className="text-lg text-white text-center">2022-2025</p>
                         <p className="text-lg text-white text-center">Bachelor of Science</p>
                         <p className="text-lg text-white italic text-important text-center">Major in Computer Science - Minor in Computational Finance</p>
-                        <p className="text-white text-center">GPA: 3.98</p>
+                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank">3.98</a></p>
                         <p className="text-white text-center mb-2">Deans List: Fall 2022, Spring 2023</p>
                         <p className="text-white text-center underline">Relevant Courses</p>
                         <ul className="text-white text-center leading-5">
@@ -245,6 +251,7 @@ const Main = () => {
                             <li>Linear Algebra</li>
                             <li>Calculus 3 & Analytical Geometry</li>
                         </ul>
+                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank">Transcipt</a></p>
                     </div>
                 </div>
             </div>
