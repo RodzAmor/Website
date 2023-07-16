@@ -199,8 +199,9 @@ const ProjectGrid = () => {
             <div className="modal">
                 <div className="modal-box bg-secondary">
                     <p className="font-semibold text-lg text-white mb-2">ML Model built with KNN algorithm compared with LinearRegressor and DecisionTrees. Hyperparameters tuned with with a GridSearchCV.</p>
-                    <p className="mb-4">Hello, this ML project has been one of my great passion projects for quite some time and I am incredibly happy to be able to finally implement my ideas. This field is incredibly vast and I have only just scraped the surface, so I am excited to learn more and build more projects! I intend for this to be a "living" project that I would incrementally improve as my knowledge and understanding of machine learning improves over time.</p>
-                    <a href="https://colab.research.google.com/drive/12iWQhXGDHkB9ixfJSYhPvgTSxszcdd9K?usp=sharing" className="text-important hover:underline" target="_blank">Google Colab</a>
+                    <p className="mb-4">This ML project has been one of my great passion projects for quite some time and I am incredibly happy to be able to finally implement my ideas. This field is incredibly vast and I have only just scraped the surface, so I am excited to learn more and build more projects! I intend for this to be a "living" project that I would incrementally improve as my knowledge and understanding of machine learning improves over time.</p>
+                    <a href="https://colab.research.google.com/drive/12iWQhXGDHkB9ixfJSYhPvgTSxszcdd9K?usp=sharing" className="text-important hover:underline block" target="_blank">Google Colab</a>
+                    <a href="https://rodzamor.com/derivatives-report" className="text-important hover:underline" target="_blank">Report</a>
                     <div className="modal-action">
                         <label htmlFor="options-modal" className="btn btn-primary border-none hover:none text-important">Okay</label>
                     </div>
