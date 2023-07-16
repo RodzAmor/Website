@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaSnapchat } from "react-icons/fa"
+import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa"
 import { AiOutlineMail, AiFillPhone } from "react-icons/ai"
 
 const Footer = () => {

@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 // import Me from "./images/me.png"
 import Me from "./images/me2.jpeg"
-import { DiJava, DiSwift, DiReact } from 'react-icons/di'
+import { DiSwift } from 'react-icons/di'
 import { SiCsharp, SiTypescript, SiMysql, SiTensorflow, SiKeras } from 'react-icons/si'
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaSnapchat, FaAws } from "react-icons/fa"
+import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaAws } from "react-icons/fa"
 import { AiFillFilePdf } from 'react-icons/ai'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
@@ -123,7 +123,7 @@ const Main = () => {
                     <p className="text-5xl font-bold text-white text-center mb-8">Resume</p>
                     <div className="flex mx-auto justify-center">
                         <div className="w-48 text-white text-center rounded-lg hover:opacity-70" style={{backgroundColor:"#c50927"}}>
-                            <a href="https://docs.google.com/document/d/1Exv4McCOxzov3E-loC_IC0UWufRMmmrDgPsmX94tXx0/edit?usp=sharing" target="_blank" className="text-white block mx-auto text-center px-12 py-6"><AiFillFilePdf className="mx-auto" size={30}/></a>
+                            <a href="https://docs.google.com/document/d/1Exv4McCOxzov3E-loC_IC0UWufRMmmrDgPsmX94tXx0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-white block mx-auto text-center px-12 py-6"><AiFillFilePdf className="mx-auto" size={30}/></a>
                         </div>
                     </div>
                 </div>
@@ -131,10 +131,10 @@ const Main = () => {
                 <div className="mb-16">
                     <p className="text-5xl font-bold text-white text-center mb-6">Contact</p>
                     <div className="flex mx-auto justify-center">
-                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#007bb5"}} target="_blank" href="https://www.linkedin.com/in/rodzamor/"><FaLinkedin size={30} /></a>
-                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#3B5998"}} target="_blank" href="https://github.com/RodzAmor"><FaGithub size={30} /></a>
-                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#e95950"}} target="_blank" href="https://www.instagram.com/andrie.amor/?hl=en"><FaInstagram size={30} /></a>
-                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#55ACEE"}} target="_blank" href="https://twitter.com/RodzAmor"><FaTwitter size={30} /></a>
+                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#007bb5"}} target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rodzamor/"><FaLinkedin size={30} /></a>
+                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#3B5998"}} target="_blank" rel="noopener noreferrer" href="https://github.com/RodzAmor"><FaGithub size={30} /></a>
+                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#e95950"}} target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/andrie.amor/?hl=en"><FaInstagram size={30} /></a>
+                        <a className="p-5 mx-4 rounded-full text-white hover:opacity-70" style={{background: "#55ACEE"}} target="_blank" rel="noopener noreferrer" href="https://twitter.com/RodzAmor"><FaTwitter size={30} /></a>
                         {/* <a class="p-2 rounded-full" style={{background: "#fffc00", color: "black"}} href="https://t.snapchat.com/r8W7gXG"><FaSnapchat size={30} /></a> */}
                     </div>
                 </div>
@@ -148,28 +148,28 @@ const Main = () => {
                 <VerticalTimeline lineColor='#e6b04b'>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#412224', color: '#fff', boxShadow: 'none', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="December 2022 - Present"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<img className="rounded-full" src={STAMP}></img>}>
+                        icon={<img className="rounded-full" src={STAMP} alt="STAMP"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://stamp.umd.edu/" target="_blank" className="hover:opacity-80">Department of Student Affairs</a>
+                            <a href="https://stamp.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Department of Student Affairs</a>
                         </h3>    
                         <h2 className="text-important italic">Student Software Developer</h2>
                         <p>Developed and implemented innovative web solutions to improve user experience, utilizing the Drupal content management system and MySQL database. Constructed schemas and designed object-relational mappings.</p>
                         <p>Worked with users to create modern and dynamic webpages using C# and ASP.NET web forms.</p>
                         <p>Designed and built Web APIs using the ASP.NET Core framework to fulfill client requests.</p>
-                        <p className="text-important text-center"><a href="https://drive.google.com/file/d/1uRoBnvxut7_RBhy7ScZ2oPD3VDwJ12ZU/view?usp=sharing" className="hover:underline" target="_blank">Award</a></p>
+                        <p className="text-important text-center"><a href="https://drive.google.com/file/d/1uRoBnvxut7_RBhy7ScZ2oPD3VDwJ12ZU/view?usp=sharing" className="hover:underline" target="_blank" rel="noopener noreferrer">Award</a></p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: '#412224', color: '#fff', boxShadow: 'none', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="August 2022 - December 2022"
-                        icon={<img className="rounded-full" src={UMD}></img>}>
+                        icon={<img className="rounded-full" src={UMD} alt="UMD"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://reslife.umd.edu/" target="_blank" className="hover:opacity-80">Department of Resident Life</a>
+                            <a href="https://reslife.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Department of Resident Life</a>
                         </h3>
                         <h2 className="text-important italic">Community Assistant</h2>
                         <p>Served as the primary point of contact for residents at UMD Ellicott Hall, handling inquiries and resolving issues.</p>
@@ -177,12 +177,12 @@ const Main = () => {
                     </VerticalTimelineElement>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: '#412224', color: '#fff', boxShadow: 'none', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="May 2022 - August 2022"
-                        icon={<img className="rounded-full" src={PandaExpress}></img>}>
+                        icon={<img className="rounded-full" src={PandaExpress} alt="Panda Express"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://www.pandaexpress.com/" target="_blank" className="hover:opacity-80">Panda Express</a>
+                            <a href="https://www.pandaexpress.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Panda Express</a>
                         </h3>
                         <h2 className="text-important italic">Kitchen Assistant</h2>
                         <p>Provided high-quality customer service during high-volume, fast-paced operations.</p>
@@ -190,12 +190,12 @@ const Main = () => {
                     </VerticalTimelineElement>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: '#412224', color: '#fff', boxShadow: 'none', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="November 2021 - May 2022"
-                        icon={<img className="rounded-full" src={CVS}></img>}>
+                        icon={<img className="rounded-full" src={CVS} alt="CVS"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://www.cvshealth.com/" target="_blank" className="hover:opacity-80">CVS Pharmacy</a>
+                            <a href="https://www.cvshealth.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">CVS Pharmacy</a>
                         </h3>
                         <h2 className="text-important italic">Sales Associate</h2>
                         <p>Handled important store operations including store invoices, working the register, and stocking shelves.</p>
@@ -203,12 +203,12 @@ const Main = () => {
                     </VerticalTimelineElement>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
-                        contentStyle={{ background: '#412224', color: '#fff', boxShadow: 'none', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="March 2021 - September 2021"
-                        icon={<img className="rounded-full" src={CodeNinjas}></img>}>
+                        icon={<img className="rounded-full" src={CodeNinjas} alt="Code Ninjas"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://www.codeninjas.com/" target="_blank" className="hover:opacity-80">Code Ninjas</a>
+                            <a href="https://www.codeninjas.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Code Ninjas</a>
                         </h3>
                         <h2 className="text-important italic">Programming Mentor</h2>
                         <p>Mentored software development with programming languages in JavaScript, Lua, and Python.</p>
@@ -221,7 +221,7 @@ const Main = () => {
                 <p className="text-5xl font-bold text-white text-center mb-6">Research</p>
                 <div className="card w-3/4 md:w-1/2 bg-secondary custom-shadow mx-auto mb-16">
                     <div className="card-body">
-                        <a className="hover:opacity-90 mb-4"><img src={Microplastics} className='rounded-lg w-64 mx-auto'></img></a>
+                        <span className="hover:opacity-90 mb-4"><img src={Microplastics} className='rounded-lg w-64 mx-auto' alt="Microplastics"></img></span>
                         <p className="text-3xl text-white text-center mb-4">Microplastics Research with the US Naval Academy</p>
                         <p className="text-lg text-white text-center">2021-2022</p>
                         <p className="text-lg font-bold text-important text-center italic mb-2">290 Buchanan Rd, Annapolis, MD 21402</p>
@@ -234,13 +234,13 @@ const Main = () => {
                 <p className="text-5xl font-bold text-white text-center mb-6">Education</p>
                 <div className="card w-3/4 md:w-1/2 bg-secondary custom-shadow mx-auto mb-16">
                     <div className="card-body">
-                        <a href="https://umd.edu/" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto'></img></a>
+                        <a href="https://umd.edu/" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto' alt="UMD"></img></a>
                         <p className="text-3xl text-white text-center mb-4">University of Maryland, College Park</p>
                         <p className="text-lg font-bold text-important text-center italic mb-2">College Park, MD 20742</p>
                         <p className="text-lg text-white text-center">2022-2025</p>
                         <p className="text-lg text-white text-center">Bachelor of Science</p>
                         <p className="text-lg text-white italic text-important text-center">Major in Computer Science - Minor in Computational Finance</p>
-                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank">3.98</a></p>
+                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.98</a></p>
                         <p className="text-white text-center mb-2">Deans List: Fall 2022, Spring 2023</p>
                         <p className="text-white text-center underline">Relevant Courses</p>
                         <ul className="text-white text-center leading-5">
@@ -251,7 +251,7 @@ const Main = () => {
                             <li>Linear Algebra</li>
                             <li>Calculus 3 & Analytical Geometry</li>
                         </ul>
-                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank">Transcipt</a></p>
+                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Transcipt</a></p>
                     </div>
                 </div>
             </div>
