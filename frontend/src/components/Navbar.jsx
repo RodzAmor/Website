@@ -31,6 +31,12 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li tabIndex={0}>
+                            <a className='text-white text-lg md:text-2xl font-semibold' href="/derivatives-report">ML Reports</a>
+                            <ul className="p-2 bg-secondary custom-shadow">
+                                <li className='bg-secondary'><a className="text-lg text-white" href="/derivatives-report">Options Price Prediction</a></li>
+                            </ul>
+                        </li>
+                        <li tabIndex={0}>
                             <a className='text-white text-lg md:text-2xl font-semibold' href="#projects">Projects</a>
                         </li>
                         {/* <li tabIndex={0}>
