@@ -1,6 +1,6 @@
 import OptionsReport from './OptionsReport.html';
-import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const DerivativesReport = () => {
     const backgroundStyle = {

@@ -22,18 +22,19 @@ const Navbar = () => {
                         <li tabIndex={0}>
                             <a className='text-white text-lg md:text-2xl font-semibold' href="/">Portfolio</a>
                             <ul className="p-2 bg-secondary custom-shadow">
-                                <li className='bg-secondary'><a className="text-lg text-white" href="#about">About</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="#resume">Resume</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="#projects">Projects</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="#experience">Experience</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="#research">Research</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="#education">Education</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#about">About</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#resume">Resume</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#projects">Projects</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#experience">Experience</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#research">Research</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#education">Education</a></li>
                             </ul>
                         </li>
                         <li tabIndex={0}>
-                            <a className='text-white text-lg md:text-2xl font-semibold' href="/derivatives-report">ML Reports</a>
+                            <a className='text-white text-lg md:text-2xl font-semibold' href="/derivatives-report">Machine Learning</a>
                             <ul className="p-2 bg-secondary custom-shadow">
-                                <li className='bg-secondary'><a className="text-lg text-white" href="/derivatives-report">Options Price Prediction</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/chess">Chess Neural Network</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/derivate-report">Options Price Prediction</a></li>
                             </ul>
                         </li>
                         <li tabIndex={0}>
@@ -71,11 +72,13 @@ const Navbar = () => {
                     <div className='navbar mx-auto max-w-7xl container rounded-lg custom-shadow bg-secondary -mt-16 mb-16 flex-col'>
                         <ul className="menu menu-vertical px-1">
                             <li tabIndex={0}>
-                                <a className="text-xl mx-auto font-semibold text-white" href="#about">About</a>
-                                <a className="text-xl mx-auto font-semibold text-white" href="#resume">Resume</a>
-                                <a className="text-xl mx-auto font-semibold text-white" href="#projects">Projects</a>
-                                <a className="text-xl mx-auto font-semibold text-white" href="#experience">Experience</a>
-                                <a className="text-xl mx-auto font-semibold text-white" href="#education">Education</a>
+                                <a className="text-xl mx-auto font-semibold text-white" href="https://www.rodzamor.com/#about">About</a>
+                                <a className="text-xl mx-auto font-semibold text-white" href="https://www.rodzamor.com/#resume">Resume</a>
+                                <a className="text-xl mx-auto font-semibold text-white" href="https://www.rodzamor.com/#projects">Projects</a>
+                                <a className="text-xl mx-auto font-semibold text-white" href="https://www.rodzamor.com/#experience">Experience</a>
+                                <a className="text-xl mx-auto font-semibold text-white" href="https://www.rodzamor.com/#education">Education</a>
+                                <a className="text-xl mx-auto font-semibold text-white" href="https://www.rodzamor.com/chess">Chess</a>
+                                
                             </li>
                         </ul>
                     </div>

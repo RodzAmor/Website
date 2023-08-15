@@ -8,7 +8,7 @@ const Footer = () => {
                 <p className="p-2">Copyright © {new Date().getFullYear} Rodz Amor</p>
                 <div className="flex items-center p-2"><AiOutlineMail /><p className="pl-1">(443) 851-9114</p></div>
                 <div className="flex items-center p-2">
-                    <AiFillPhone /><a href="mailto:ramorSTEM2022@gmail.com" className="hover:opacity-80 pl-1" style={{color: "#457b9d"}}>ramorSTEM2022@gmail.com</a>
+                    <AiFillPhone /><a href="mailto:ramorSTEM2022@gmail.com" className="hover:opacity-80 pl-1">ramorSTEM2022@gmail.com</a>
                 </div>
             </div> 
 
