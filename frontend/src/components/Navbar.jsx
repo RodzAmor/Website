@@ -31,10 +31,10 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li tabIndex={0}>
-                            <a className='text-white text-lg md:text-2xl font-semibold' href="/derivatives-report">Machine Learning</a>
+                            <a className='text-white text-lg md:text-2xl font-semibold' href="/derivatives-report">Machine Learning & AI</a>
                             <ul className="p-2 bg-secondary custom-shadow">
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/chess">Chess Neural Network</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/derivate-report">Options Price Prediction</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/derivatives-report">Options Price Prediction</a></li>
                             </ul>
                         </li>
                         <li tabIndex={0}>

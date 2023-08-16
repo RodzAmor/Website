@@ -35,7 +35,7 @@ function ChessHistory({ moveHistory }) {
 
 const ChessGame = () => {
     const [playerColor, setPlayerColor] = useState('random');
-    const [model, setModel] = useState('test');
+    const [model, setModel] = useState('test_chess_model');
     const [game, setGame] = useState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("Error");
@@ -101,15 +101,20 @@ const ChessGame = () => {
             board: fen,
             model: model
         }
+
         setMessage("AI is thinking...");
-        fetch('http://127.0.0.1:5000/move', {
+        fetch('https://j34vmzowjzvvavh7g2io7clfeu0azbsq.lambda-url.us-east-1.on.aws/', {
             method: 'POST',
+            // mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
         })
-        .then(res => res.json())
+        .then(res => {
+            res.json()
+            console.log(res.json())
+        })
         .then(data => {
             if (data.success) {
                 const gameCopy = new Chess(fen);
@@ -144,6 +149,7 @@ const ChessGame = () => {
             }
         })
         .catch(error => {
+            setMessage("");
             setError(true);
             setErrorMessage("Fetch has failed. The backend server may be down.");
         })
@@ -174,11 +180,75 @@ const ChessGame = () => {
     return (
         <>
             <Navbar />
-            <h1 className='text-white text-4xl text-center font-semibold mb-6'>Play Chess Neural Network</h1>
-            <div className={gameStarted ? 'w-10/12 mx-auto md:container' : 'w-10/12 mx-auto md:container'}>
+            
+            <div className='block text-center mb-8'>
+                <div className="card w-11/12 md:w-1/2 bg-secondary custom-shadow mx-auto mb-16">
+                    <div className="card-body">
+                        <h1 className='text-white text-4xl text-center font-semibold mb-4'>Chess Neural Network</h1>
+                        <a href="https://github.com/RodzAmor/Chess-Neural-Network" className="text-important text-2xl hover:underline mb-2" target="_blank" rel="noopener noreferrer">Source Code</a>
+                        <p className="text-white text-center mb-2">
+                        Chess engines are perhaps my most favorite application of artificial intelligence on board games.
+                        This project is my attempt to develop an AI based chess engine that is skilled enough to beat me. 
+                        It consists of a chess engine that utilizes a convolutional neural network to rapidly evaluate thousands of positions along with the&nbsp;
+                        <a className="text-important hover:underline" href="https://www.youtube.com/watch?v=l-hh51ncgDI" target="_blank" rel="noopener noreferrer">minimax algorithm with alpha-beta pruning</a>
+                        &nbsp;to explore potential positions and determine the optimal move.
+                        </p>
+                        <p className="text-white text-center mb-2">
+                            Neural network trained on over 100,000,000 games provided by the Lichess database.
+                        </p>
+                        <p className="text-white text-center">
+                            Feel free to play it and don't be afraid to give me feedback. Thanks!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className='w-10/12 mx-auto md:container'>
+            {!gameStarted && 
+                    <div className='text-center mx-auto my-4 100vw'>
+                        <div className={ window.innerWidth <= 760 ? 
+                            'flex flex-col align-center justify-center items-center card bg-secondary custom-shadow' :
+                            'flex flex-col align-center justify-center items-center card bg-secondary custom-shadow w-1/2 2 mx-auto p-8'}>
+                            <p className="text-3xl text-white text-center mb-6">Player Color</p>
+                            <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
+                                <button className={buttonStyle(playerColor, 'white')} onClick={() => setPlayerColor('white')}>
+                                    White
+                                </button>
+                                <button className={buttonStyle(playerColor, 'random')} onClick={() => setPlayerColor('random')}>
+                                    Random
+                                </button>
+                                <button className={buttonStyle(playerColor, 'black')} onClick={() => setPlayerColor('black')}>
+                                    Black
+                                </button>
+                            </div>
+                            
+                            <p className="text-3xl text-white text-center my-6">Model</p>
+                            <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
+                                <button className={buttonStyle(model, 'simple')} onClick={() => setModel('simple.h5')}>
+                                    Simple
+                                </button>
+                                <button className={buttonStyle(model, 'test')} onClick={() => setModel('test_chess_model')}>
+                                    Medium
+                                </button>
+                                <button className={buttonStyle(model, 'advanced')} onClick={() => setModel('advanced.h5')}>
+                                    Advanced
+                                </button>
+                            </div>
+
+                            <button className="border border-gold hover:bg-gold text-gold hover:text-primary ease-in-out transition duration-200 px-8 py-4 rounded-lg mt-8" 
+                                onClick={startGame}>
+                                    Start Game
+                            </button>
+                            
+                            
+                        </div>
+                    </div>
+                }
                 <div className=''>
                     {gameStarted && (gameStatus !== 'checkmate' || gameStatus !== 'stalemate') && 
-                        <div className='text-center text-important block my-4'>{message}</div>
+                        <>
+                            <p className="text-lg text-white text-center mb-6">You are playing as <b>{playerColor}</b></p>
+                            <div className='text-center text-important block my-4'>{message}</div>
+                        </>
                     }
                     {error && 
                         <div className='text-center text-important my-4'>{errorMessage}</div>
@@ -216,47 +286,6 @@ const ChessGame = () => {
                             }
                     </div>
                 </div>
-
-                {!gameStarted && 
-                    <div className='text-center mx-auto my-4 100vw'>
-                        <div className={ window.innerWidth <= 760 ? 
-                            'flex flex-col align-center justify-center items-center card bg-secondary custom-shadow' :
-                            'flex flex-col align-center justify-center items-center card bg-secondary custom-shadow w-2/3 2 mx-auto p-8'}>
-                            <p className="text-3xl text-white text-center my-6">Player Color</p>
-                            <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
-                                <button className={buttonStyle(playerColor, 'white')} onClick={() => setPlayerColor('white')}>
-                                    White
-                                </button>
-                                <button className={buttonStyle(playerColor, 'random')} onClick={() => setPlayerColor('random')}>
-                                    Random
-                                </button>
-                                <button className={buttonStyle(playerColor, 'black')} onClick={() => setPlayerColor('black')}>
-                                    Black
-                                </button>
-                            </div>
-                            
-                            <p className="text-3xl text-white text-center my-6">Model</p>
-                            <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
-                                <button className={buttonStyle(model, 'simple')} onClick={() => setModel('simple.h5')}>
-                                    Simple
-                                </button>
-                                <button className={buttonStyle(model, 'test')} onClick={() => setModel('test.h5')}>
-                                    Medium
-                                </button>
-                                <button className={buttonStyle(model, 'advanced')} onClick={() => setModel('advanced.h5')}>
-                                    Advanced
-                                </button>
-                            </div>
-
-                            <button className="border border-gold hover:bg-gold text-gold hover:text-primary ease-in-out transition duration-200 px-8 py-4 rounded-lg my-8" 
-                                onClick={startGame}>
-                                    Start Game
-                            </button>
-                            
-                            
-                        </div>
-                    </div>
-                }
                 
             </div>
             <Footer />
