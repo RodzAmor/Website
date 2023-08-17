@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Chessboard } from 'react-chessboard';
@@ -23,7 +22,7 @@ function ChessHistory({ moveHistory }) {
 
                     return (
                         <span key={index} className='text-lg text-white text-center'>
-                            <b className=''>{turnNumber}.</b>{` ${move} ${blackMove}`}&nbsp;&nbsp;&nbsp;
+                            <b className=''>{turnNumber}.</b>&nbsp;{`${move} ${blackMove}`}&nbsp;&nbsp;&nbsp;
                         </span>)
                 }
                 return null;
@@ -44,8 +43,10 @@ const ChessGame = () => {
     const [gameStarted, setGameStarted] = useState(false);
     const [gameStatus, setGameStatus] = useState('waiting');
     const [moveHistory, setMoveHistory] = useState([]);
+    const [depth, setDepth] = useState(3);
 
     // const [gameOver, setGameOver] = useState(null);
+    
 
     function onDrop(sourceSquare, targetSquare, promote) {
         if(!gameStarted) return;
@@ -100,13 +101,15 @@ const ChessGame = () => {
     function makeAIMove(fen) {
         const payload = {
             board: fen,
-            model: model
+            model: model,
+            depth: depth
         }
 
         setMessage("AI is thinking...");
         // fetch('https://j34vmzowjzvvavh7g2io7clfeu0azbsq.lambda-url.us-east-1.on.aws/', {
         fetch('https://0zp17qa817.execute-api.us-east-1.amazonaws.com/default/chess-InferenceFunction-2SHp6v4vswpr', {
-        // fetch('http://127.0.0.1:3000/', {
+        // fetch('http://127.0.0.1:5000/move', {
+        // fetch('http://127.0.0.1:5300/', {
             method: 'POST',
             // mode: 'no-cors',
             headers: {
@@ -177,6 +180,10 @@ const ChessGame = () => {
         setGame("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     }
 
+    const handleDepth = (event) => {
+        const value = parseInt(event.target.value);
+        setDepth(value);
+    }
 
     return (
         <>
@@ -236,9 +243,9 @@ const ChessGame = () => {
                             </div>
                             
                             <p className="text-3xl text-white text-center my-6">Depth</p>
-                            <input type="range" min="0" max="5" value="1" className="bg-umd-red" disabled="true"/>
-                            <p className="text-sm text-red-500 text-center mt-2">Note: Current depth can only be set to 1.</p>
-                            <p className="text-sm text-red-500 text-center">AWS Lambda times out for long computations. Currently working to optimize code and use load balancing for more intense operations.</p>
+                            <input type="range" min="1" max="5" value={depth} onChange={handleDepth} className="bg-umd-red" />
+                            <p className="text-sm text-white text-center mt-2">Depth: {depth}</p>
+                            {/* <p className="text-sm text-red-500 text-center">AWS Lambda times out for long computations. Currently working to optimize code and use load balancing for more intense operations.</p> */}
                             <button className="border border-gold hover:bg-gold text-gold hover:text-primary ease-in-out transition duration-200 px-8 py-4 rounded-lg mt-8" 
                                 onClick={startGame}>
                                     Start Game
