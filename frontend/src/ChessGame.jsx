@@ -6,6 +6,7 @@ import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
 // import Chessboard from 'chessboardjsx';
 
+
 function buttonStyle(currentColor, buttonColor) {
     return currentColor === buttonColor ?
         "border border-gold bg-gold text-primary ease-in-out w-32 h-12 rounded-lg place-self-center" :
@@ -103,7 +104,9 @@ const ChessGame = () => {
         }
 
         setMessage("AI is thinking...");
-        fetch('https://j34vmzowjzvvavh7g2io7clfeu0azbsq.lambda-url.us-east-1.on.aws/', {
+        // fetch('https://j34vmzowjzvvavh7g2io7clfeu0azbsq.lambda-url.us-east-1.on.aws/', {
+        fetch('https://0zp17qa817.execute-api.us-east-1.amazonaws.com/default/chess-InferenceFunction-2SHp6v4vswpr', {
+        // fetch('http://127.0.0.1:3000/', {
             method: 'POST',
             // mode: 'no-cors',
             headers: {
@@ -111,10 +114,7 @@ const ChessGame = () => {
             },
             body: JSON.stringify(payload)
         })
-        .then(res => {
-            res.json()
-            console.log(res.json())
-        })
+        .then(res => res.json())
         .then(data => {
             if (data.success) {
                 const gameCopy = new Chess(fen);
@@ -149,6 +149,7 @@ const ChessGame = () => {
             }
         })
         .catch(error => {
+            console.log(error)
             setMessage("");
             setError(true);
             setErrorMessage("Fetch has failed. The backend server may be down.");
@@ -223,17 +224,21 @@ const ChessGame = () => {
                             
                             <p className="text-3xl text-white text-center my-6">Model</p>
                             <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
-                                <button className={buttonStyle(model, 'simple')} onClick={() => setModel('simple.h5')}>
+                                <button className={buttonStyle(model, 'simple')} onClick={() => setModel('test_chess_model')}>
                                     Simple
                                 </button>
                                 <button className={buttonStyle(model, 'test')} onClick={() => setModel('test_chess_model')}>
                                     Medium
                                 </button>
-                                <button className={buttonStyle(model, 'advanced')} onClick={() => setModel('advanced.h5')}>
+                                <button className={buttonStyle(model, 'advanced')} onClick={() => setModel('test_chess_model')}>
                                     Advanced
                                 </button>
                             </div>
-
+                            
+                            <p className="text-3xl text-white text-center my-6">Depth</p>
+                            <input type="range" min="0" max="5" value="1" className="bg-umd-red" disabled="true"/>
+                            <p className="text-sm text-red-500 text-center mt-2">Note: Current depth can only be set to 1.</p>
+                            <p className="text-sm text-red-500 text-center">AWS Lambda times out for long computations. Currently working to optimize code and use load balancing for more intense operations.</p>
                             <button className="border border-gold hover:bg-gold text-gold hover:text-primary ease-in-out transition duration-200 px-8 py-4 rounded-lg mt-8" 
                                 onClick={startGame}>
                                     Start Game
