@@ -2,6 +2,7 @@ import Main from './Main';
 import Books from './Books';
 import WIP from './WIP';
 import DerivativesReport from './DerivativesReport';
+import TennisReport from './TennisReport';
 import ChessGame from './ChessGame';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles.css';
@@ -14,6 +15,7 @@ function Router() {
         <Route path="/books" element={<Books />} />
         <Route path="/stocks" element={<WIP />} />
         <Route path="/derivatives-report" element={<DerivativesReport />} />
+        <Route path="/tennis-report" element={<TennisReport />} />
         <Route path="/chess" element={<ChessGame />} />
       </Routes>
     </BrowserRouter>
