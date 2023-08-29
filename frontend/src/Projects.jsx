@@ -21,7 +21,7 @@ const ProjectGrid = () => {
                         <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>ML Model build using the KNN Algorithm to predict prices of options primarily for S&P500 ETFs.</p>
                     </div>
                 </label>
-                <label className="hover:cursor-pointer bg-secondary ease-in-out transition duration-200 h-56 relative" htmlFor="wip-modal">
+                <label className="hover:cursor-pointer bg-secondary ease-in-out transition duration-200 h-56 relative" htmlFor="chess-modal">
                     <div className="absolute inset-0 bg-cover"
                         style={{ backgroundImage: `url(https://chessfox.com/wp-content/uploads/2018/08/effective-chess-calculation-observe-consequences.png)`, transitionDuration: '200ms', filter: `brightness(0.55)` }}></div>
                     <div className="absolute inset-0 transition-all duration-200 z-10" 
@@ -30,7 +30,7 @@ const ProjectGrid = () => {
                         onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0)'}></div>
                     <div className="text-center relative p-8">
                         <p className="text-important text-3xl font-bold mb-4" style={{textShadow:'0px 0px 20px #000000'}}>Chess Artificial Intelligence</p>
-                        <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>WIP - Come back later to see the completed project</p>
+                        <p className="hidden lg:block text-white text-md font-bold" style={{textShadow:'0px 0px 20px #000000'}}>Chess Convolutional Neural Network trained on thousands of games. Finds optimal move from the minimax searching algorithm with alpha beta pruning.</p>
                     </div>
                 </label>
                 <label className="hover:cursor-pointer bg-secondary ease-in-out transition duration-200 h-56 relative" htmlFor="loop-modal">
@@ -127,6 +127,21 @@ const ProjectGrid = () => {
                     <h3 className="font-bold text-lg text-white">WIP - Come back later to see the completed project!</h3>
                     <div className="modal-action">
                         <label htmlFor="wip-modal" className="btn btn-primary border-none hover:none text-important">Okay</label>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="chess-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box bg-secondary">
+                    <h3 className="font-bold text-lg text-white mb-2">Chess Convolutional Neural Network!</h3>
+                    <p className="mb-4">Chess engines are perhaps my most favorite application of artificial intelligence on board games.
+                        This project is my attempt to develop an AI based chess engine that is skilled enough to beat me. 
+                        It consists of a chess engine that utilizes a convolutional neural network to rapidly evaluate thousands of positions along with the&nbsp;
+                        <a className="text-important hover:underline" href="https://www.youtube.com/watch?v=l-hh51ncgDI" target="_blank" rel="noopener noreferrer">minimax algorithm with alpha-beta pruning</a>
+                        &nbsp;to explore potential positions and determine the optimal move.</p>
+                    <a href="https://rodzamor.com/chess" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Play Chess Engine</a>
+                    <div className="modal-action">
+                        <label htmlFor="chess-modal" className="btn btn-primary border-none hover:none text-important">Okay</label>
                     </div>
                 </div>
             </div>

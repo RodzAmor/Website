@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
 // import Chessboard from 'chessboardjsx';
-
+import * as tf from '@tensorflow/tfjs';
 
 function buttonStyle(currentColor, buttonColor) {
     return currentColor === buttonColor ?
@@ -35,7 +35,7 @@ function ChessHistory({ moveHistory }) {
 
 const ChessGame = () => {
     const [playerColor, setPlayerColor] = useState('random');
-    const [model, setModel] = useState('normalized_model.h5');
+    const [model, setModel] = useState("");
     // const [model, setModel] = useState('model-best.h5');
     const [game, setGame] = useState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     const [error, setError] = useState(false);
@@ -47,7 +47,115 @@ const ChessGame = () => {
     const [depth, setDepth] = useState(3);
 
     // const [gameOver, setGameOver] = useState(null);
+    useEffect(() => {
+        async function load() {
+            const loadedModel = await tf.loadLayersModel('/models/test_model/model.json')
+            setModel(loadedModel);
+        }
+        load();
+    }, []);
+
     
+    const evaluateBoard = (boardFen) => {
+        const encodedBoard = fastEncode(boardFen);
+        const prediction = model.predict(encodedBoard);
+        console.log(prediction)
+        return prediction;
+    };
+
+    const fastEncode = (boardFen) => {
+        const pieceIndex = {
+            'P': 0, 'R': 1, 'N': 2, 'B': 3, 'Q': 4, 'K': 5, // White Pieces
+            'p': 6, 'r': 7, 'n': 8, 'b': 9, 'q': 10, 'k': 11 // Black Pieces
+        };
+    
+        let encodedBoard = Array(8).fill().map(() => Array(8).fill().map(() => Array(13).fill(0)));
+    
+        const chess = new Chess(boardFen);
+        const board = chess.board();
+    
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
+                const piece = board[i][j];
+                if (piece != null) {
+                    encodedBoard[i][j][pieceIndex[piece.type.toUpperCase()]] = piece.color === 'w' ? 1 : -1;
+                } else {
+                    encodedBoard[i][j][12] = 1;
+                }
+            }
+        }
+    
+        return tf.tensor4d([encodedBoard]); // Convert the 3D array to a 4D tensor
+    };    
+    
+    const minimaxAlphaBeta = (chess, depth, alpha, beta, maximizingPlayer) => {
+        if (depth === 0 || chess.isCheckmate() || chess.isStalemate()) {
+            console.log(depth)
+            return [evaluateBoard(chess.fen()), null];
+        }
+    
+        const moves = chess.moves();
+        let bestMove = null;
+        if (maximizingPlayer) {
+          let maxEval = Number.NEGATIVE_INFINITY;
+          for (const move of moves) {
+            chess.move(move);
+            const [evaluation] = minimaxAlphaBeta(chess, depth - 1, alpha, beta, false);
+            chess.undo();
+    
+            if (evaluation > maxEval) {
+              maxEval = evaluation;
+              bestMove = move;
+            }
+    
+            alpha = Math.max(alpha, evaluation);
+            if (beta <= alpha) {
+              break;
+            }
+          }
+          return [maxEval, bestMove];
+        } else {
+          let minEval = Number.POSITIVE_INFINITY;
+          for (const move of moves) {
+            chess.move(move);
+            const [evaluation] = minimaxAlphaBeta(chess, depth - 1, alpha, beta, true);
+            chess.undo();
+    
+            if (evaluation < minEval) {
+              minEval = evaluation;
+              bestMove = move;
+            }
+    
+            beta = Math.min(beta, evaluation);
+            if (beta <= alpha) {
+              break;
+            }
+          }
+          return [minEval, bestMove];
+        }
+    };
+    
+    const makeAIMove = (fen) => {
+        const gameCopy = new Chess(fen);
+        // console.log(gameCopy.turn() === (playerColor === "white" ? "w" : "b"))
+        const [centipawn, bestMove] = minimaxAlphaBeta(gameCopy, depth, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY, gameCopy.turn() !== (playerColor === "white" ? "w" : "b"));
+        console.log(centipawn, bestMove)
+        if (bestMove) {
+            gameCopy.move(bestMove);
+            console.log(bestMove);
+            setGame(gameCopy.fen());
+            setMoveHistory((moveHistory) => [...moveHistory, bestMove]);
+
+
+            if (gameCopy.isCheckmate()) {
+                setGameStatus("checkmate");
+                setMessage("Checkmate! AI wins.");
+            } else if (gameCopy.isStalemate()) {
+                setGameStatus("stalemate");
+                setMessage("Stalemate! Game is over.");
+            }
+        }
+    };
 
     function onDrop(sourceSquare, targetSquare, promote) {
         if(!gameStarted) return;
@@ -59,6 +167,7 @@ const ChessGame = () => {
         try {
             // console.log('Player: ' + gameCopy.moves())
             let move;
+            console.log("Player move:", gameCopy.turn())
             if (promote !== null) {
                 move = gameCopy.move({
                     from: sourceSquare,
@@ -71,7 +180,7 @@ const ChessGame = () => {
                     to: targetSquare
                 });
             }
-
+            console.log("Player move:", gameCopy.turn())
             setMoveHistory(moveHistory => [...moveHistory, move.san]);
             // console.log("Player Move: " + move.san);
     
@@ -87,7 +196,7 @@ const ChessGame = () => {
                 setMessage("Stalemate! Game is over.");
             }
 
-            if(!gameCopy.isCheckmate()) {
+            if(!gameCopy.isCheckmate() && !gameCopy.isStalemate()) {
                 makeAIMove(gameCopy.fen());
             }
         } catch(err) {
@@ -97,68 +206,6 @@ const ChessGame = () => {
         }
 
 
-    }
-
-    function makeAIMove(fen) {
-        const payload = {
-            board: fen,
-            model: model,
-            depth: depth,
-        }
-
-        setMessage("AI is thinking...");
-        // fetch('https://j34vmzowjzvvavh7g2io7clfeu0azbsq.lambda-url.us-east-1.on.aws/', {
-        // fetch('https://0zp17qa817.execute-api.us-east-1.amazonaws.com/default/chess-InferenceFunction-2SHp6v4vswpr', {
-        // fetch('http://127.0.0.1:5000/move', {
-        // fetch('https://kg3bfmfkg7jveb4nj2udajuvkm0qmrva.lambda-url.us-east-1.on.aws/', {
-        fetch('https://rzvpsqpevl.execute-api.us-east-1.amazonaws.com/default/chess-app-InferenceFunction-gFflrTRazqPD', {
-        // fetch('http://127.0.0.1:3000/', {
-            method: 'POST',
-            // mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                const gameCopy = new Chess(fen);
-                const uci = data.uci;
-                let move;
-                if (uci.length === 5) {
-                    move = gameCopy.move({
-                        from: uci.slice(0, 2),
-                        to: uci.slice(2, 4),
-                        promotion: uci.slice(4)
-                   });
-                } else {
-                    move = gameCopy.move({
-                        from: uci.slice(0, 2),
-                        to: uci.slice(2)
-                    });
-                }
-                setGame(gameCopy.fen());
-                // console.log("Computer Move: " + move.san);
-
-                setMessage("Player's Turn");
-                setMoveHistory(moveHistory => [...moveHistory, move.san]);
-
-                if (gameCopy.isCheckmate()) {
-                    setGameStatus("checkmate");
-                    setMessage("Checkmate! Game is over.");
-                } else if(gameCopy.isStalemate()) {
-                    setGameStatus("stalemate");
-                    setMessage("Stalemate! Game is over.");
-                }
-            }
-        })
-        .catch(error => {
-            console.log(error)
-            setMessage("");
-            setError(true);
-            setErrorMessage("Fetch has failed. The backend server may be down.");
-        })
     }
 
     function startGame() {
@@ -233,36 +280,36 @@ const ChessGame = () => {
                             
                             <p className="text-3xl text-white text-center my-6">Model</p>
                             <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
-                                <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on my personal Lichess games">
-                                    <button className={buttonStyle(model, 'personal_model.h5') + " disabled:opacity-40"} disabled onClick={() => setModel('personal_model.h5')}>
-                                        Human
+                                <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on 100 games">
+                                    <button className={buttonStyle(model, '100_games_model')} onClick={() => setModel('100_games_model')}>
+                                        Simple
                                     </button>
                                 </div>
-                                <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on normalized ELO data">
-                                    <button className={buttonStyle(model, 'normalized_model.h5')} onClick={() => setModel('normalized_model.h5')}>
-                                        Normalized
+                                <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on 1000 games">
+                                    <button className={buttonStyle(model, '100_games_model')} onClick={() => setModel('100_games_model')}>
+                                        Medium
                                     </button>
                                 </div>
-                                <div className="tooltip tooltip-primary tooltip-top" data-tip="Combined best aspects of type 1 and 2 models">
-                                    <button className={buttonStyle(model, 'model_3.h5')} onClick={() => setModel('model_3.h5')}>
-                                        Model 3
-                                    </button>
-                                </div>
-                                {/* <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on 10000 games">
+                                <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on 10000 games">
                                     <button className={buttonStyle(model, '1000_games_model')} onClick={() => setModel('1000_games_model')}>
                                         Advanced
+                                    </button>
+                                </div>
+                                <div className="tooltip tooltip-primary tooltip-bottom" data-tip="Trained on my Lichess games (~78 games)">
+                                    <button className={buttonStyle(model, 'personal_model')} onClick={() => setModel('personal_model')}>
+                                        Amor Bot
                                     </button>
                                 </div>
                                 <div className="tooltip tooltip-primary tooltip-bottom" data-tip="Trained on exactly 1 board position">
                                     <button className={buttonStyle(model, 'test_chess_model')} onClick={() => setModel('test_chess_model')}>
                                         Untrained AI
                                     </button>
-                                </div> */}
-                                {/* <div className="tooltip tooltip-primary tooltip-bottom" data-tip="Trained on exactly 1 board position">
+                                </div>
+                                <div className="tooltip tooltip-primary tooltip-bottom" data-tip="Trained on exactly 1 board position">
                                     <button className={buttonStyle(model, 'model-best.h5')} onClick={() => setModel('model-best.h5')}>
                                         Best Model
                                     </button>
-                                </div> */}
+                                </div>
                             </div>
                             
                             <p className="text-3xl text-white text-center my-6">Depth</p>

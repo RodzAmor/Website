@@ -156,7 +156,7 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://stamp.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Department of Student Affairs</a>
                         </h3>    
-                        <h2 className="text-important italic">Student Software Developer</h2>
+                        <h2 className="text-important italic">Student Web Developer</h2>
                         <p>Developed and implemented innovative web solutions to improve user experience, utilizing the Drupal content management system and MySQL database. Constructed schemas and designed object-relational mappings.</p>
                         <p>Worked with users to create modern and dynamic webpages using C# and ASP.NET web forms.</p>
                         <p>Designed and built Web APIs using the ASP.NET Core framework to fulfill client requests.</p>
@@ -240,7 +240,7 @@ const Main = () => {
                         <p className="text-lg text-white text-center">2022-2025</p>
                         <p className="text-lg text-white text-center">Bachelor of Science</p>
                         <p className="text-lg text-white italic text-important text-center">Major in Computer Science - Minor in Computational Finance</p>
-                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.98</a></p>
+                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.9</a></p>
                         <p className="text-white text-center mb-2">Deans List: Fall 2022, Spring 2023</p>
                         <p className="text-white text-center underline">Relevant Courses</p>
                         <ul className="text-white text-center leading-5">
