@@ -234,7 +234,7 @@ const ChessGame = () => {
                             <p className="text-3xl text-white text-center my-6">Model</p>
                             <div className={window.innerWidth <= 760 ? 'flex flex-col gap-2' : 'grid grid-cols-3 gap-2'}>
                                 <div className="tooltip tooltip-primary tooltip-top" data-tip="Trained on my personal Lichess games">
-                                    <button className={buttonStyle(model, 'personal_model.h5') + " disabled:opacity-40"} disabled onClick={() => setModel('personal_model.h5')}>
+                                    <button className={buttonStyle(model, 'personal_model.h5')} onClick={() => setModel('personal_model.h5')}>
                                         Human
                                     </button>
                                 </div>

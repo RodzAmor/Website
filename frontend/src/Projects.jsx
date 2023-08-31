@@ -194,7 +194,7 @@ const ProjectGrid = () => {
                 <div className="modal-box bg-secondary">
                     <p className="font-semibold text-lg text-white mb-2">Developed web application for fitness content using React.js to provide users with an interactive experience.</p>
                     <p className="mb-4">The web application is built using the MERN stack, incorporating MongoDB for data storage and dynamic webpages, Express for backend routing, React for frontend user interface, and Node.js for application logic.</p>
-                    <a href="https://www.doghousefit.com/" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Fitness Website</a>
+                    {/* <a href="https://www.doghousefit.com/" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Fitness Website</a> */}
                     <div className="modal-action">
                         <label htmlFor="fitness-modal" className="btn btn-primary border-none hover:none text-important">Okay</label>
                     </div>

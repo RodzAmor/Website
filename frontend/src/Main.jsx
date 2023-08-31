@@ -2,7 +2,7 @@
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 // import Me from "./images/me.png"
-import Me from "./images/me2.jpeg"
+import Me from "./images/me3.png"
 import { DiSwift } from 'react-icons/di'
 import { SiCsharp, SiTypescript, SiMysql, SiTensorflow, SiKeras } from 'react-icons/si'
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaAws } from "react-icons/fa"
@@ -240,7 +240,7 @@ const Main = () => {
                         <p className="text-lg text-white text-center">2022-2025</p>
                         <p className="text-lg text-white text-center">Bachelor of Science</p>
                         <p className="text-lg text-white italic text-important text-center">Major in Computer Science - Minor in Computational Finance</p>
-                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.9</a></p>
+                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.9</a></p>
                         <p className="text-white text-center mb-2">Deans List: Fall 2022, Spring 2023</p>
                         <p className="text-white text-center underline">Relevant Courses</p>
                         <ul className="text-white text-center leading-5">
@@ -251,7 +251,7 @@ const Main = () => {
                             <li>Linear Algebra</li>
                             <li>Calculus 3 & Analytical Geometry</li>
                         </ul>
-                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1RS2vuxzxrpzGJSJw_GJg9EAj0gdNn-mF/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Transcipt</a></p>
+                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Transcipt</a></p>
                     </div>
                 </div>
             </div>
