@@ -15355,8 +15355,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">df_puts</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df_puts</span><span class="p">[</span><span class="n">df_puts</span><span class="p">[</span><span class="s1">&#39;P_LAST&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Splitting the data by 80% training and 20% testing</span>
-    <span class="n">train_calls</span><span class="p">,</span> <span class="n">test_calls</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df_calls</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-    <span class="n">train_puts</span><span class="p">,</span> <span class="n">test_puts</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df_puts</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">train_calls</span><span class="p">,</span> <span class="n">test_calls</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df_calls</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">train_puts</span><span class="p">,</span> <span class="n">test_puts</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df_puts</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
     
     
     <span class="k">return</span> <span class="n">train_calls</span><span class="p">,</span> <span class="n">test_calls</span><span class="p">,</span> <span class="n">train_puts</span><span class="p">,</span> <span class="n">test_puts</span>
@@ -16247,13 +16247,6 @@ Residual Squared = 0.9719776815136438
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/var/folders/py/dl_g66xd76d4rkbgkq493c600000gr/T/ipykernel_25776/2981823581.py:9: RuntimeWarning: divide by zero encountered in scalar divide
-  d1 = (np.log(S / K) + ((r + ((σ ** 2) / 2)) * T)) / (σ * np.sqrt(T))
-/var/folders/py/dl_g66xd76d4rkbgkq493c600000gr/T/ipykernel_25776/2981823581.py:9: RuntimeWarning: divide by zero encountered in scalar divide
-  d1 = (np.log(S / K) + ((r + ((σ ** 2) / 2)) * T)) / (σ * np.sqrt(T))
-</pre>
-</div>
 </div>
 <div class="jp-OutputArea-child">
     
