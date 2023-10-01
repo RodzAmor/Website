@@ -15,6 +15,7 @@ import PandaExpress from './images/experience/PandaExpress.png'
 import CodeNinjas from './images/experience/CodeNinjas.png'
 import UMD from './images/UMD.png'
 import Microplastics from './images/research/microplastics.jpeg'
+import ApexFund from './images/experience/Apex Fund.jpeg'
 import ProjectGrid from "./Projects"
 // Notes: Add parallax
 
@@ -150,13 +151,28 @@ const Main = () => {
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
+                        date="September 2023 - Present"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        icon={<img className="rounded-full" src={ApexFund} alt="STAMP"></img>}>
+                        <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Apex Fund</a>
+                        </h3>    
+                        <h2 className="text-important italic">Junior Quantitative Analyst</h2>
+                        <p>Quantitative trader in a fund with $10,000 AUM, focusing on volatility predicting and derivatives pricing.</p>
+                        <p>Engineered a volatility-based trading strategy involving VIX and OVX index by implementing machine learning and stochastic based models in Python for predicting implied volatility.</p>
+                        <p>Utilized Quantlib and Alpaca API to backtest and validate strategies with a Sharpe Ratio exceeding 2.0.</p>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement 
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="December 2022 - Present"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                         icon={<img className="rounded-full" src={STAMP} alt="STAMP"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
-                            <a href="https://stamp.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Department of Student Affairs</a>
+                            <a href="https://stamp.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">University of Maryland</a>
                         </h3>    
-                        <h2 className="text-important italic">Student Web Developer</h2>
+                        <h2 className="text-important italic">Full Stack Developer</h2>
                         <p>Developed and implemented innovative web solutions to improve user experience, utilizing the Drupal content management system and MySQL database. Constructed schemas and designed object-relational mappings.</p>
                         <p>Worked with users to create modern and dynamic webpages using C# and ASP.NET web forms.</p>
                         <p>Designed and built Web APIs using the ASP.NET Core framework to fulfill client requests.</p>
