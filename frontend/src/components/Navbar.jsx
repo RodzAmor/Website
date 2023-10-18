@@ -35,6 +35,7 @@ const Navbar = () => {
                             <ul className="p-2 bg-secondary custom-shadow">
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/chess">Chess Neural Network</a></li>
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/tennis-report">Tennis Game Prediction</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/nvidia-investment-thesis">NVIDIA Investment Thesis</a></li>
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/derivatives-report">Options Price Prediction</a></li>
                             </ul>
                         </li>
