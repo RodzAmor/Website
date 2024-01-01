@@ -38,7 +38,7 @@ const Main = () => {
                         <p className="text-3xl text-white text-center mb-4">Nice to meet you, my name is</p>
                         <p className="text-6xl font-bold text-important text-center">Rodz Andrie Amor</p>
                         <p className="text-2xl text-white font-semibold italic text-center">Software Engineer & Quantitative Trader</p>
-                        <p className="text-lg text-white italic text-center"><span className="text-umd-red">University</span> of <span className="text-umd-gold">Maryland</span> - Class of 2025</p>
+                        <p className="text-lg text-white italic text-center"><span className="text-umd-red">University</span> of <span className="text-umd-gold">Maryland</span> - Class of 2026</p>
                     </div>
                 </div>
 
@@ -253,7 +253,7 @@ const Main = () => {
                         <a href="https://umd.edu/" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto' alt="UMD"></img></a>
                         <p className="text-3xl text-white text-center mb-4">University of Maryland, College Park</p>
                         <p className="text-lg font-bold text-important text-center italic mb-2">College Park, MD 20742</p>
-                        <p className="text-lg text-white text-center">2022-2025</p>
+                        <p className="text-lg text-white text-center">2022-2026</p>
                         <p className="text-lg text-white text-center">Bachelor of Science</p>
                         <p className="text-lg text-white italic text-important text-center">Major in Computer Science - Minor in Computational Finance</p>
                         <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.9</a></p>
