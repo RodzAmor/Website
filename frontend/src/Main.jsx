@@ -3,22 +3,30 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 // import Me from "./images/me.png"
 import Me from "./images/me3.png"
-import { DiSwift } from 'react-icons/di'
-import { SiCsharp, SiTypescript, SiMysql, SiTensorflow, SiKeras } from 'react-icons/si'
+import CSHARP from "./images/languages/csharp.png"
+import CPP from "./images/languages/cpp.png"
+import SWIFT from "./images/languages/swift.png"
+// import { DiSwift } from 'react-icons/di'
+import { SiTypescript, SiMysql, SiTensorflow, SiKeras } from 'react-icons/si'
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaAws } from "react-icons/fa"
 import { AiFillFilePdf } from 'react-icons/ai'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import STAMP from './images/experience/STAMP.png'
-import CVS from './images/experience/CVS.png'
-import PandaExpress from './images/experience/PandaExpress.png'
+// import CVS from './images/experience/CVS.png'
+// import PandaExpress from './images/experience/PandaExpress.png'
 import CodeNinjas from './images/experience/CodeNinjas.png'
+import UMDWork from './images/experience/UMD.png'
 import UMD from './images/UMD.png'
+import Microsoft from './images/experience/Microsoft.png'
+import Netflix from './images/experience/Netflix.png'
 import Microplastics from './images/research/microplastics.jpeg'
 import ApexFund from './images/experience/Apex Fund.jpeg'
 import ProjectGrid from "./Projects"
-// Notes: Add parallax
-
+import me200 from './images/me/me200.png';
+import me377 from './images/me/me377.png';
+import me608 from './images/me/me608.png';
+import me963 from './images/me/me963.png';
 
 const Main = () => {
     return (
@@ -28,7 +36,13 @@ const Main = () => {
                 <div className="flex justify-center mb-16">
                     <div className="avatar">
                         <div className="bg-secondary rounded-full w-56 ring-4 ring-gold mx-auto">
-                            <img className="" src={Me} alt="portrait" />
+                            {/* <img className="" src={Me} alt="portrait" /> */}
+                            <img
+                                sizes="(max-width: 1400px) 100vw, 1400px"
+                                srcSet={`${me200} 200w, ${me963} 963w, ${me608} 608w`}
+                                src={me377}
+                                alt="Personal Image"
+                            />
                         </div>
                     </div>
                 </div>
@@ -37,7 +51,7 @@ const Main = () => {
                     <div className="card-body">
                         <p className="text-3xl text-white text-center mb-4">Nice to meet you, my name is</p>
                         <p className="text-6xl font-bold text-important text-center">Rodz Andrie Amor</p>
-                        <p className="text-2xl text-white font-semibold italic text-center">Software Engineer & Quantitative Trader</p>
+                        <p className="text-2xl text-white font-semibold italic text-center">Software Engineer & Quantitative Researcher</p>
                         <p className="text-lg text-white italic text-center"><span className="text-umd-red">University</span> of <span className="text-umd-gold">Maryland</span> - Class of 2026</p>
                     </div>
                 </div>
@@ -47,11 +61,10 @@ const Main = () => {
                         <div className="card-body">
                             <p className="text-4xl text-center mb-4 text-white text-bold">About Me</p>
                             <p className="text-white text-lg leading-6">
-                                My name is Rodz Andrie Amor, but I go by Andrie. I am a student at
-                                the <span className="text-gold">University of Maryland</span> with a major in <span className="text-gold">Computer Science</span> and
-                                minor in <span className="text-gold">Computational Finance.</span>
+                                My name is Rodz Andrie Amor, but you can just call me Andre. I am a student at
+                                the <span className="text-gold">University of Maryland</span> with a double degree in <span className="text-gold">Computer Science</span> and <span className="text-umd-gold">Applied Mathematics.</span>  I also minor in <span className="text-gold">Computational Finance.</span>
                             </p>
-                            <p className="text-white text-lg leading-6">I am currently working to become a Software Engineer and a Quant.</p>
+                            <p className="text-white text-lg leading-6">I am currently studying to become a more skilled software engineer and mathematician.</p>
                             <p className="text-white text-lg leading-6 pb-12">Feel free to contact me if you want to collaborate on any projects, ventures, or just want to chat!</p>
                             <div className="flex justify-center">
                                 <div className="border border-gold md:w-1/2 hover:bg-gold text-gold hover:text-primary ease-in-out transition duration-200">
@@ -65,6 +78,15 @@ const Main = () => {
                             <p className="text-4xl text-center mb-4 text-white text-bold">Skills</p>
                             <p className="text-lg text-center text-white text-bold">Languages</p>
                             <div className="grid grid-cols-3 gap-2 gap-y-4 text-white">
+                                <div className="mx-auto">
+                                    <img src={CPP} alt="C++ Logo" class="w-20" />
+                                </div>
+                                <div className="mx-auto">
+                                    <img src={CSHARP} alt="C# Logo" class="w-20" />
+                                </div>
+                                <div className="mx-auto">
+                                    <img src={SWIFT} alt="Swift Logo" class="w-20 rounded-xl" />
+                                </div>
                                 <div className="mx-auto">
                                     <svg width="80px" height="80px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z" fill="url(#paint0_linear_87_8204)"/>
@@ -81,7 +103,9 @@ const Main = () => {
                                     </defs>
                                     </svg>
                                 </div>
-                                <SiCsharp size={80} className="mx-auto" style={{ color: '#239120' }} />
+                                {/* <SiCsharp size={80} className="mx-auto" style={{ color: '#239120' }} /> */}
+                                {/* <SiCplusplus size={80} className="mx-auto" style={{ color: '#00599C' }} /> */}
+
                                 <div className="mx-auto">
                                     <svg width="80px" height="80px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.0497 8.44062C22.6378 3.32607 19.2566 0 19.2566 0C19.7598 5.28738 13.813 6.53583 12.2189 10.1692C11.1312 12.6485 12.9638 14.8193 16.0475 17.5554C15.7749 16.9494 15.3544 16.3606 14.9288 15.7645C13.4769 13.7313 11.9645 11.6132 16.0497 8.44062Z" fill="#E76F00"/>
@@ -94,7 +118,7 @@ const Main = () => {
                                         <path d="M28 28.9679C27.7869 31.6947 18.7877 32.2683 12.9274 31.8994C9.10432 31.6583 8.33812 31.0558 8.32691 31.047C11.9859 31.6402 18.1549 31.7482 23.1568 30.8225C27.5903 30.0016 28 28.9679 28 28.9679Z" fill="#5382A1"/>
                                     </svg>
                                 </div>
-                                <DiSwift size={70} className="mx-auto" style={{ color: '#FA7343' }} />
+                                {/* <DiSwift size={70} className="mx-auto" style={{ color: '#FA7343' }} /> */}
                                 <SiTypescript size={70} className="mx-auto" style={{ color: '#007ACC' }} />
                             </div>
                             <p className="text-lg text-center text-white text-bold mt-2">Libraries and Frameworks</p>
@@ -141,8 +165,35 @@ const Main = () => {
                 </div>
             </div>
 
-
-            <ProjectGrid />
+            <div id="education" className="mb-16">
+                <p className="text-5xl font-bold text-white text-center mb-6">Education</p>
+                <div className="card w-3/4 md:w-1/2 bg-secondary custom-shadow mx-auto mb-16">
+                    <div className="card-body">
+                        <a href="https://umd.edu/" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto' alt="UMD"></img></a>
+                        <p className="text-3xl text-white text-center mb-4">University of Maryland, College Park</p>
+                        <p className="text-lg font-bold text-important text-center italic mb-2">College Park, MD 20742</p>
+                        <p className="text-lg text-white text-center">2022-2026</p>
+                        <p className="text-lg text-white text-center">Bachelor of Science</p>
+                        <p className="text-lg text-white italic text-important text-center">Double Degree in Computer Science and Applied Mathematics</p>
+                        <p className="text-lg text-white italic text-important text-center">Minor in Computational Finance</p>
+                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.9</a></p>
+                        {/* <p className="text-white text-center mb-2">Deans List: Fall 2022, Spring 2023</p> */}
+                        <p className="text-white text-center underline">Relevant Courses</p>
+                        <p className="text-white">Object-Oriented Programming II, Advanced Data Structures, Algorithms, Data Science, Deep Learning,
+                        Linear Algebra, Probability Theory, Machine Learning, Cloud Computing, Computer Networks, App Development</p>
+                        {/* <ul className="text-white text-center leading-5">
+                            <li>Object Oriented Programming II</li>
+                            <li>Database Systems</li>
+                            <li>Introduction to Computer Systems</li>
+                            <li>Discrete Structures</li>
+                            <li>Linear Algebra</li>
+                            <li>Calculus 3 & Analytical Geometry</li>
+                        </ul> */}
+                        
+                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Transcipt</a></p>
+                    </div>
+                </div>
+            </div>
 
             <div id="experience" className="mb-16">
                 <p className="text-5xl font-bold text-white text-center mb-6">Experience</p>
@@ -151,9 +202,38 @@ const Main = () => {
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
+                        date="June 2025 - August 2025"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        icon={<img className="rounded-full" src={Netflix} alt="Netflix"></img>}>
+                        <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
+                            <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Netflix</a>
+                        </h3>    
+                        <h2 className="text-important italic">Software Engineering Intern</h2>
+                        <h3 className="text-important italic">Los Gatos, CA</h3>
+                        <p>Incoming Summer 2025 Software Engineering Intern with the Core Engineering and Content Infrastructure team.</p>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement 
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentArrowStyle={{ borderRight: '7px solid #412224' }}
+                        date="May 2024 - August 2024"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        icon={<img className="rounded-full" src={Microsoft} alt="Microsoft"></img>}>
+                        <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
+                            <a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Microsoft</a>
+                        </h3>    
+                        <h2 className="text-important italic">Software Engineering Intern</h2>
+                        <p>Worked with the Cloud Engineering Scale Team to develop a robust traffic manager, performing load balancing and distributing traffic across multiple cloud datacenter regions.</p>
+                        <p>Utilized Azure OpenAI Studio to deploy fine-tuned GPT-4o model and managed the endpoints with PromptFlow.</p>
+                        <p>Achieved SLA goals of 99.99% reliability and sub-10-minute processing with a load test of 350 IcMs/second.</p>
+                    </VerticalTimelineElement>
+                    {/* <VerticalTimelineElement 
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentArrowStyle={{ borderRight: '7px solid #412224' }}
                         date="September 2023 - Present"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<img className="rounded-full" src={ApexFund} alt="STAMP"></img>}>
+                        icon={<img className="rounded-full" src={ApexFund} alt="Apex Fund"></img>}>
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Apex Fund</a>
                         </h3>    
@@ -161,7 +241,7 @@ const Main = () => {
                         <p>Quantitative trader in a fund with $10,000 AUM, focusing on volatility predicting and derivatives pricing.</p>
                         <p>Engineered a volatility-based trading strategy involving VIX and OVX index by implementing machine learning and stochastic based models in Python for predicting implied volatility.</p>
                         <p>Utilized Quantlib and Alpaca API to backtest and validate strategies with a Sharpe Ratio exceeding 2.0.</p>
-                    </VerticalTimelineElement>
+                    </VerticalTimelineElement> */}
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
@@ -172,13 +252,27 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://stamp.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">University of Maryland</a>
                         </h3>    
-                        <h2 className="text-important italic">Full Stack Developer</h2>
-                        <p>Developed and implemented innovative web solutions to improve user experience, utilizing the Drupal content management system and MySQL database. Constructed schemas and designed object-relational mappings.</p>
-                        <p>Worked with users to create modern and dynamic webpages using C# and ASP.NET web forms.</p>
-                        <p>Designed and built Web APIs using the ASP.NET Core framework to fulfill client requests.</p>
+                        <h2 className="text-important italic">Software Engineer</h2>
+                        <p>Implemented full-stack web applications with .NET Web Forms and .NET Core, utilizing MySQL database.</p>
+                        <p>Performed stress testing to evaluate app resilience and error handling with 10,000 concurrent requests.</p>
+                        <p>Led the migration from legacy PHP system code to modern libraries, reducing code complexity and technical debt.</p>
                         <p className="text-important text-center"><a href="https://drive.google.com/file/d/1uRoBnvxut7_RBhy7ScZ2oPD3VDwJ12ZU/view?usp=sharing" className="hover:underline" target="_blank" rel="noopener noreferrer">Award</a></p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement 
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
+                        contentArrowStyle={{ borderRight: '7px solid #412224' }}
+                        date="September 2023 – December 2023"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        icon={<img className="rounded-full" src={UMDWork} alt="University of Maryland"></img>}>
+                        <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
+                            <a href="https://umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">University of Maryland</a>
+                        </h3>    
+                        <h2 className="text-important italic">Undergraduate Teaching Assistant</h2>
+                        <p>Teaching assistant for 100+ students with Professor Teli in DA TA120: Python Programming for Data Science.</p>
+                        <p>Responsible for grading student assignments, holding office hours and review sessions, and proctoring exams.</p>
+                    </VerticalTimelineElement>
+                    {/* <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
                         contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
                         contentArrowStyle={{ borderRight: '7px solid #412224' }}
@@ -216,7 +310,7 @@ const Main = () => {
                         <h2 className="text-important italic">Sales Associate</h2>
                         <p>Handled important store operations including store invoices, working the register, and stocking shelves.</p>
                         <p>Boosted sales by presenting and selling the Carepass service to over 30 clients.</p>
-                    </VerticalTimelineElement>
+                    </VerticalTimelineElement> */}
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--education"
                         contentStyle={{ background: '#412224', color: '#fff', boxShadow:'rgb(0 0 0 / 35%) 0px 5px 15px'}}
@@ -226,7 +320,7 @@ const Main = () => {
                         <h3 className="vertical-timeline-element-title text-important font-semibold text-2xl">
                             <a href="https://www.codeninjas.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Code Ninjas</a>
                         </h3>
-                        <h2 className="text-important italic">Programming Mentor</h2>
+                        <h2 className="text-important italic">Programming Tutor</h2>
                         <p>Mentored software development with programming languages in JavaScript, Lua, and Python.</p>
                         <p>Directed and led summer courses on Lua game development and Python programming. </p>
                     </VerticalTimelineElement>
@@ -246,31 +340,8 @@ const Main = () => {
                 </div>
             </div>
 
-            <div id="education" className="mb-16">
-                <p className="text-5xl font-bold text-white text-center mb-6">Education</p>
-                <div className="card w-3/4 md:w-1/2 bg-secondary custom-shadow mx-auto mb-16">
-                    <div className="card-body">
-                        <a href="https://umd.edu/" className="hover:opacity-90 mb-4"><img src={UMD} className='w-48 mx-auto' alt="UMD"></img></a>
-                        <p className="text-3xl text-white text-center mb-4">University of Maryland, College Park</p>
-                        <p className="text-lg font-bold text-important text-center italic mb-2">College Park, MD 20742</p>
-                        <p className="text-lg text-white text-center">2022-2026</p>
-                        <p className="text-lg text-white text-center">Bachelor of Science</p>
-                        <p className="text-lg text-white italic text-important text-center">Major in Computer Science - Minor in Computational Finance</p>
-                        <p className="text-white text-center">GPA: <a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">3.9</a></p>
-                        <p className="text-white text-center mb-2">Deans List: Fall 2022, Spring 2023</p>
-                        <p className="text-white text-center underline">Relevant Courses</p>
-                        <ul className="text-white text-center leading-5">
-                            <li>Object Oriented Programming II</li>
-                            <li>Database Systems</li>
-                            <li>Introduction to Computer Systems</li>
-                            <li>Discrete Structures</li>
-                            <li>Linear Algebra</li>
-                            <li>Calculus 3 & Analytical Geometry</li>
-                        </ul>
-                        <p className="text-important text-center underline"><a href="https://drive.google.com/file/d/1vS5NUr5F0EvD5sIsolXVanSo6lgH6ThG/view?usp=sharing" className="text-important hover:underline" target="_blank" rel="noopener noreferrer">Transcipt</a></p>
-                    </div>
-                </div>
-            </div>
+            <ProjectGrid />
+
             <Footer />
         </>
     )

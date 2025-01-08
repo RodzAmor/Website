@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer max-w-7xl container mx-auto p-4 bg-secondary text-white rounded-lg custom-shadow overflow-x-auto">
             <div className="flex justify-center">
-                <p className="p-2">Copyright © {new Date().getFullYear} Rodz Amor</p>
+                {/* <p className="p-2">Copyright © {new Date().getFullYear} Rodz Amor</p> */}
                 <div className="flex items-center p-2"><AiFillPhone /><p className="pl-1">(443) 851-9114</p></div>
                 <div className="flex items-center p-2">
                     <AiOutlineMail /><a href="mailto:ramorSTEM2022@gmail.com" className="hover:opacity-80 text-xs sm:text-sm pl-1">ramorSTEM2022@gmail.com</a>

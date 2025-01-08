@@ -24,10 +24,10 @@ const Navbar = () => {
                             <ul className="p-2 bg-secondary custom-shadow">
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#about">About</a></li>
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#resume">Resume</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#projects">Projects</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#education">Education</a></li>
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#experience">Experience</a></li>
                                 <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#research">Research</a></li>
-                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#education">Education</a></li>
+                                <li className='bg-secondary'><a className="text-lg text-white" href="https://www.rodzamor.com/#projects">Projects</a></li>
                             </ul>
                         </li>
                         <li tabIndex={0}>
