@@ -2,7 +2,7 @@
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 // import Me from "./images/me.png"
-import Me from "./images/me3.png"
+// import Me from "./images/me3.png"
 import CSHARP from "./images/languages/csharp.png"
 import CPP from "./images/languages/cpp.png"
 import SWIFT from "./images/languages/swift.png"
@@ -21,7 +21,7 @@ import UMD from './images/UMD.png'
 import Microsoft from './images/experience/Microsoft.png'
 import Netflix from './images/experience/Netflix.png'
 import Microplastics from './images/research/microplastics.jpeg'
-import ApexFund from './images/experience/Apex Fund.jpeg'
+// import ApexFund from './images/experience/Apex Fund.jpeg'
 import ProjectGrid from "./Projects"
 import me200 from './images/me/me200.png';
 import me377 from './images/me/me377.png';
@@ -41,7 +41,7 @@ const Main = () => {
                                 sizes="(max-width: 1400px) 100vw, 1400px"
                                 srcSet={`${me200} 200w, ${me963} 963w, ${me608} 608w`}
                                 src={me377}
-                                alt="Personal Image"
+                                alt="Andre Amor"
                             />
                         </div>
                     </div>
@@ -223,6 +223,7 @@ const Main = () => {
                             <a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Microsoft</a>
                         </h3>    
                         <h2 className="text-important italic">Software Engineering Intern</h2>
+                        <h3 className="text-important italic">Redmond, WA</h3>
                         <p>Worked with the Cloud Engineering Scale Team to develop a robust traffic manager, performing load balancing and distributing traffic across multiple cloud datacenter regions.</p>
                         <p>Utilized Azure OpenAI Studio to deploy fine-tuned GPT-4o model and managed the endpoints with PromptFlow.</p>
                         <p>Achieved SLA goals of 99.99% reliability and sub-10-minute processing with a load test of 350 IcMs/second.</p>
@@ -238,6 +239,7 @@ const Main = () => {
                             <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Apex Fund</a>
                         </h3>    
                         <h2 className="text-important italic">Junior Quantitative Analyst</h2>
+                        <h3 className="text-important italic">College Park, MD</h3>
                         <p>Quantitative trader in a fund with $10,000 AUM, focusing on volatility predicting and derivatives pricing.</p>
                         <p>Engineered a volatility-based trading strategy involving VIX and OVX index by implementing machine learning and stochastic based models in Python for predicting implied volatility.</p>
                         <p>Utilized Quantlib and Alpaca API to backtest and validate strategies with a Sharpe Ratio exceeding 2.0.</p>
@@ -253,6 +255,7 @@ const Main = () => {
                             <a href="https://stamp.umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">University of Maryland</a>
                         </h3>    
                         <h2 className="text-important italic">Software Engineer</h2>
+                        <h3 className="text-important italic">College Park, MD</h3>
                         <p>Implemented full-stack web applications with .NET Web Forms and .NET Core, utilizing MySQL database.</p>
                         <p>Performed stress testing to evaluate app resilience and error handling with 10,000 concurrent requests.</p>
                         <p>Led the migration from legacy PHP system code to modern libraries, reducing code complexity and technical debt.</p>
@@ -269,6 +272,7 @@ const Main = () => {
                             <a href="https://umd.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">University of Maryland</a>
                         </h3>    
                         <h2 className="text-important italic">Undergraduate Teaching Assistant</h2>
+                        <h3 className="text-important italic">College Park, MD</h3>
                         <p>Teaching assistant for 100+ students with Professor Teli in DA TA120: Python Programming for Data Science.</p>
                         <p>Responsible for grading student assignments, holding office hours and review sessions, and proctoring exams.</p>
                     </VerticalTimelineElement>
@@ -321,6 +325,7 @@ const Main = () => {
                             <a href="https://www.codeninjas.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">Code Ninjas</a>
                         </h3>
                         <h2 className="text-important italic">Programming Tutor</h2>
+                        <h3 className="text-important italic">Edgewater, MD</h3>
                         <p>Mentored software development with programming languages in JavaScript, Lua, and Python.</p>
                         <p>Directed and led summer courses on Lua game development and Python programming. </p>
                     </VerticalTimelineElement>
